@@ -13,6 +13,12 @@
         <div class="sidebar-nav">
             <!--navigation-->
             <ul class="metismenu" id="sidenav">
+                    <a href="{{ route('user.index')}}" aria-expanded="true">
+                        <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
+                        </div>
+                        <div class="menu-title">Cards</div>
+                    </a>
+                </li>
                 <li>
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon"><i class="material-icons-outlined">home</i>
