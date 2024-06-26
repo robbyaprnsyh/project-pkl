@@ -57,7 +57,8 @@ class UserController extends Controller
         $user->is_admin = $request->is_admin;
         $user->save();
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')
+        ->with('success', 'Data Berhasil Di Tambahkan!');
     }
 
     /**
@@ -106,7 +107,8 @@ class UserController extends Controller
         $user->is_admin = $request->is_admin;
         $user->save();
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')
+        ->with('success', 'Data Berhasil Di Ubah!');
     }
 
     /**
@@ -121,6 +123,7 @@ class UserController extends Controller
             $user->delete();
             return redirect()->route('user.index');
         }
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')
+        ->with('success', 'Data Berhasil Di Hapus!');
     }
 }

@@ -2,14 +2,14 @@
 @section('content')
     <h6 class="mb-0 text-uppercase">Table User</h6>
     <hr>
+    @if (session('success'))
+        <div class="alert alert-success fade show mt-3" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="card">
         <div class="card-body">
             <div class="col-lg-2">
-                @if (session('success'))
-                    <div class="alert alert-success fade show mt-3" role="alert">
-                        {{ session('success') }}
-                    </div>
-                @endif
                 <a href="{{ route('user.create') }}" class="btn btn-outline-success px-4 raised d-flex gap-2"><i
                         class="material-icons-outlined">account_circle</i>Add User</a>
             </div>
