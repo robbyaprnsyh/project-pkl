@@ -1,4 +1,4 @@
 @extends('layouts.backend')
 @section('content')
-<h1>Halaman Show User</h1>
+<h1>Halaman Show {{ $user->name }}</h1>
 @endsection

@@ -16,7 +16,7 @@
                     <a href="{{ route('user.index')}}" aria-expanded="true">
                         <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
                         </div>
-                        <div class="menu-title">Cards</div>
+                        <div class="menu-title">ACL</div>
                     </a>
                 </li>
                 <li>

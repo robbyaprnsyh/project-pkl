@@ -1,10 +1,15 @@
 @extends('layouts.backend')
 @section('content')
-    <h6 class="mb-0 text-uppercase">Admin</h6>
+    <h6 class="mb-0 text-uppercase">Table User</h6>
     <hr>
     <div class="card">
         <div class="card-body">
             <div class="col-lg-2">
+                @if (session('success'))
+                    <div class="alert alert-success fade show mt-3" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <a href="{{ route('user.create') }}" class="btn btn-outline-success px-4 raised d-flex gap-2"><i
                         class="material-icons-outlined">account_circle</i>Add User</a>
             </div>
@@ -26,9 +31,19 @@
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->is_admin ? 'Admin' : 'User' }}</td>
                             <td>
-                                <a href="{{ route('user.show', $item->id) }}" type="button" class="btn btn-outline-primary gap-2"><i class="material-icons-outlined">search</i></a>
-                                <a href="{{ route('user.edit', $item->id) }}" class="btn btn-outline-warning px-5">EDIT</a>
-                                <button type="button" class="btn btn-outline-danger px-5">HAPUS</button>
+                                <form action="{{ route('user.destroy', $item->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <a href="{{ route('user.show', $item->id) }}" type="button"
+                                        class="btn btn-outline-primary gap-2"><i
+                                            class="material-icons-outlined">search</i></a>
+                                    |
+                                    <a href="{{ route('user.edit', $item->id) }}"
+                                        class="btn btn-outline-warning px-5">EDIT</a>
+                                    |
+                                    <button class="btn btn-outline-danger px-5"
+                                        onclick="return confirm('Apakah anda ingin menghapus?')">HAPUS</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

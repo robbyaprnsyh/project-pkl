@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
+    <title>Maxton</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('backend/assets/css/bootstrap.min.css')}}" type="image/png">
     <!-- loader-->
